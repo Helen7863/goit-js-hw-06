@@ -9,13 +9,15 @@ const onInput = (event) =>{
     const valueLength = event.target.dataset.length;
     
     if(Number(valueLength)  === value.length){
-        refs.input.classList.remove('invalid'),
-        refs.input.classList.add('valid')
+        classList('valid', 'invalid')
     }else{
-        refs.input.classList.add('invalid'),
-        refs.input.classList.remove('valid')
-    }
+        classList('invalid', 'valid')
     
 
+}}
+
+function classList( a, b){
+    refs.input.classList.remove(b),
+    refs.input.classList.add(a)
 }
-refs.input.addEventListener('blur', onInput);
+refs.input.addEventListener('blur', onInput)
